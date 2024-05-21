@@ -1,0 +1,22 @@
+name: Deploy to PythonAnywhere
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to PythonAnywhere
+        uses: SamYuan1990/ftp-deploy-action@v3
+        with:
+          ftp-server: ftp.pythonanywhere.com
+          ftp-username: <your-pythonanywhere-username>
+          ftp-password: <your-pythonanywhere-password>
+          local-dir: .
+          server-dir: /path/to/your/pythonanywhere/app

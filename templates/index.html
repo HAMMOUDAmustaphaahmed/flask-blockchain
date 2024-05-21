@@ -45,4 +45,11 @@
 <hr><br> {% endif %}
 
 
+<h3>check </h2><span class="badge badge-secondary">Check it in ./blocks</span>
+
+<form action="{{ url_for('blocks') }}" method="POST">
+    <button type="submit" class="btn btn-primary btn-lg btn-block">All Blocks</button>
+</form>
+
+
 <br><br><br> {% endblock %}

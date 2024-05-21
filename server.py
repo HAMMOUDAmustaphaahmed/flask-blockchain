@@ -37,8 +37,8 @@ def mining():
         return render_template("index.html", querry=max_index)
     return render_template("index.html")
 
-@app.route("/blocks", methods=["GET"])
-def list_blocks():
+@app.route("/blocks", methods=["GET","POST"])
+def blocks():
     blocks = blockchain.get_all_blocks()
     return render_template("blocks.html", blocks=blocks)
 
